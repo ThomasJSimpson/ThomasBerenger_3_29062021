@@ -107,7 +107,7 @@ main {
 .functioning h2 {
   margin-bottom: 30px;
 }
-.functioning-articles {
+.functioning-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -117,7 +117,7 @@ main {
   padding-left: 3.5%;
 }
 
-.functioning-articles-indiv {
+.functioning-list__item {
   display: flex;
   width: 100%;
   height: 70px;
@@ -128,8 +128,14 @@ main {
   box-shadow: 0px 5px 13px 0px rgb(0 0 0 / 15%);
   transition: 0.3s;
 }
+.functioning-list__item:hover {
+  background-color: #f5edff;
+}
+.functioning-list__item:hover i {
+  color: #9356dc;
+}
 
-.functioning-articles-indiv__number {
+.functioning-list__item__number {
   margin-left: -12px;
   color: white;
   background-color: #9356dc;
@@ -141,18 +147,10 @@ main {
   margin-right: 22px;
 }
 
-.functioning-articles-indiv__icon {
+.functioning-list__item__icon {
   font-size: 20px;
   color: #7e7e7e;
   margin-right: 27px;
-}
-
-.functioning-articles-indiv__icon--purple {
-  color: #9356dc;
-}
-
-.functioning-articles-indiv--purple {
-  background-color: #f5edff;
 }
 
 .restaurant {
@@ -165,13 +163,13 @@ main {
 .restaurant h2 {
   margin-bottom: 27px;
 }
-.restaurant-cards {
+.restaurant__cardsList {
   height: 1058px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.restaurant-cards-indiv {
+.restaurant-card {
   display: flex;
   flex-direction: column;
   height: 250px;
@@ -180,22 +178,22 @@ main {
   box-shadow: 0px 5px 13px 0px rgb(0 0 0 / 15%);
   transition: 0.3s;
 }
-.restaurant-cards-indiv:hover {
+.restaurant-card:hover {
   box-shadow: 0px 5px 13px 0px rgb(0 0 0 / 75%);
 }
 
-.restaurant-cards-indiv__image {
+.restaurant-card__image {
   display: flex;
   height: 175px;
   border-radius: 15px 15px 0 0;
 }
-.restaurant-cards-indiv__image img {
+.restaurant-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-.restaurant-cards-indiv__image__new {
+.restaurant-card__image__new {
   width: 79px;
   height: 29px;
   font-size: 14px;
@@ -208,20 +206,20 @@ main {
   margin-top: 13px;
   border-radius: 2px;
 }
-.restaurant-cards-indiv__description {
+.restaurant-card__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 25px 16px 13px;
 }
 
-.restaurant-cards-indiv__description__title h3 {
+.restaurant-card__description h3 {
   font-weight: 500;
   font-size: 17px;
   margin-bottom: 4px;
 }
 
-.restaurant-cards-indiv__description__title p {
+.restaurant-card__description p {
   font-weight: lighter;
 }
 
