@@ -5,6 +5,21 @@ $font-primary: "Shrikhand", sans-serif;
 $font-secondary: "Roboto", sans-serif;
 $shadow-default: rgb(0 0 0 / 0.3);
 $shadow-hover: rgb(0 0 0 / 0.65);
+$breakpoints: (
+  tablet: 720px,
+  desktop: 1024px,
+);
+
+@mixin tablet {
+  @media screen and (min-width: map-get($breakpoints, tablet)) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @content;
+  }
+}
 
 @mixin shadowed($shadow-color: $shadow-default) {
   box-shadow: 0px 5px 13px 0px $shadow-color;
@@ -34,6 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 375px;
+  // max-width: 1440px;
 }
 
 main {
@@ -44,12 +60,14 @@ main {
 
 .header {
   display: flex;
-  height: 63px;
   justify-content: center;
   &__logo {
-    height: 30px;
-    margin-top: 22px;
-    margin-bottom: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: $font-primary;
+    @include desktop {
+      font-size: 45px;
+    }
     &--menus {
       margin-left: 32px;
       margin-right: 106px;
@@ -61,16 +79,23 @@ main {
   display: flex;
   background-color: rgb(234, 234, 234);
   align-items: center;
-  height: 50px;
   box-shadow: inset 0px 4px 5px -3px $shadow-default;
   justify-content: center;
   i {
     margin-left: 104px;
     margin-right: 18px;
+    @include desktop {
+      font-size: 20px;
+    }
   }
   p {
     font-size: 16px;
     margin-right: 134px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    @include desktop {
+      font-size: 20px;
+    }
   }
 }
 
@@ -78,7 +103,7 @@ main {
   background-color: rgb(246, 246, 246);
   display: flex;
   flex-direction: column;
-  height: 287px;
+
   align-items: center;
   h1 {
     align-self: center;
@@ -86,12 +111,23 @@ main {
     font-weight: 500;
     margin: 43px 21.6% 20px 17.33%;
     text-align: center;
+    @include tablet {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   > p {
     text-align: center;
     font-size: 18px;
     margin: 0 8.27% 30px 10.4%;
     font-weight: lighter;
+    @include tablet {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .button {
+    margin-bottom: 57px;
   }
 }
 
@@ -120,7 +156,7 @@ main {
 .functioning {
   display: flex;
   flex-direction: column;
-  padding: 50px 5.33% 68px;
+  padding: 50px 5.33% 43px;
   h2 {
     margin-bottom: 30px;
   }
@@ -129,23 +165,33 @@ main {
 .functioning-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  align-content: stretch;
   list-style: none;
-  height: 270px;
   padding-left: 3.5%;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 0;
+  }
   &__item {
     display: flex;
-    width: 100%;
+    width: 325px;
+    align-self: center;
     height: 70px;
     justify-content: start;
     align-items: center;
     border-radius: 22px;
     background-color: #f6f6f6;
+    margin-bottom: 25px;
     @include shadowed;
-
     transition: 0.3s;
+    @include tablet {
+
+      margin-left: 30px;
+      margin-right: 30px;
+    }
     &:hover {
       background-color: #f5edff;
       i {
@@ -174,19 +220,21 @@ main {
 .restaurant {
   display: flex;
   flex-direction: column;
-  height: 1225px;
   background-color: #f6f6f6;
-  padding: 58px 5.33% 64px;
+  padding: 58px 5.33% 46px;
   h2 {
     margin-bottom: 27px;
   }
 }
 
 .restaurant__cardsList {
-  height: 1058px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 .restaurant-card {
   display: flex;
@@ -194,8 +242,13 @@ main {
   height: 250px;
   background-color: white;
   border-radius: 15px;
+  margin-bottom: 18px;
   @include shadowed;
   transition: 0.3s;
+  @include tablet {
+    flex-basis: 42%;
+    margin-bottom: 40px;
+  }
   &:hover {
     @include shadowed($shadow-hover);
   }
@@ -252,6 +305,12 @@ main {
   background-color: #353535;
   color: white;
   padding: 25px 5.33%;
+  @include desktop {
+    font-size: 1.05em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
   a {
     display: flex;
     color: white;
@@ -262,6 +321,10 @@ main {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 22px;
+    @include desktop {
+      margin-bottom: 0;
+      font-size: 1.2em;
+    }
   }
   &__prop {
     display: flex;
@@ -280,6 +343,7 @@ main {
   margin-left: -2px;
   margin-right: 6px;
 }
+
 /* page menus*/
 
 .back-link {
@@ -308,6 +372,10 @@ main {
   border-radius: 50px 50px 0 0;
   margin-top: -47px;
   background-color: #f6f6f6;
+  @include desktop {
+    margin-top: 0px;
+    border-radius: 0 0 0 0;
+  }
   &__title {
     display: flex;
     margin-bottom: 39px;
@@ -334,7 +402,7 @@ main {
 .meals {
   display: flex;
   flex-direction: column;
-  margin-bottom: 37px;
+  margin-bottom: 21px;
   h2 {
     margin-left: 5px;
     margin-bottom: 24px;
@@ -343,11 +411,16 @@ main {
     font-weight: 300;
   }
   ul {
-    height: 232px;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
+    @include desktop {
+      flex-direction: row;
+      justify-content:space-evenly;
+    }
+    
   }
   &__item {
     display: flex;
@@ -356,8 +429,20 @@ main {
     background-color: white;
     height: 68px;
     border-radius: 15px;
+    margin-bottom: 16px;
     padding: 15px 22px 12px 10px;
+    
+
+    @include desktop {
+     width: 30%;
+    }
     @include shadowed;
+    &__txt{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+    }
     h3 {
       font-weight: 500;
       font-size: 18px;
@@ -373,7 +458,6 @@ main {
     }
   }
 }
-
 .underline-h2 {
   padding-bottom: 7px;
   border-bottom: 3px solid $color-tertiary;
