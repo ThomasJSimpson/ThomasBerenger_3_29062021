@@ -1,0 +1,45 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 197px;
+    background-color: #353535;
+    color: white;
+    padding: 25px 5.33%;
+    @include desktop {
+      font-size: 1.05em;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+    a {
+      display: flex;
+      color: white;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-family: $font-primary;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 22px;
+      @include desktop {
+        margin-bottom: 0;
+        font-size: 1.2em;
+      }
+    }
+    &__prop {
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 13px;
+      }
+    }
+  }
+  
+  .fa-utensils {
+    margin-right: 10px;
+  }
+  .fa-hands-helping {
+    transform: scale(0.7, 1);
+    margin-left: -2px;
+    margin-right: 6px;
+  }

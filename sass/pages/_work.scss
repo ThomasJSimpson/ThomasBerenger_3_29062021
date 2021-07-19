@@ -1,0 +1,117 @@
+.location {
+    display: flex;
+    background-color: rgb(234, 234, 234);
+    align-items: center;
+    box-shadow: inset 0px 4px 5px -3px $shadow-default;
+    justify-content: center;
+    i {
+      margin-left: 104px;
+      margin-right: 18px;
+      @include desktop {
+        font-size: 20px;
+      }
+    }
+    p {
+      font-size: 16px;
+      margin-right: 134px;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      @include desktop {
+        font-size: 20px;
+      }
+    }
+  }
+  .exploration {
+    background-color: rgb(246, 246, 246);
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    h1 {
+      align-self: center;
+      font-size: 24px;
+      font-weight: 500;
+      margin: 43px 21.6% 20px 17.33%;
+      text-align: center;
+      @include tablet {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    > p {
+      text-align: center;
+      font-size: 18px;
+      margin: 0 8.27% 30px 10.4%;
+      font-weight: lighter;
+      @include tablet {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    .button {
+      margin-bottom: 57px;
+    }
+  }
+  .functioning {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 5.33% 43px;
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+  
+  .functioning-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-left: 3.5%;
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-left: 30px;
+      margin-right: 30px;
+      padding-left: 0;
+    }
+    &__item {
+      display: flex;
+      width: 325px;
+      align-self: center;
+      height: 70px;
+      justify-content: start;
+      align-items: center;
+      border-radius: 22px;
+      background-color: #f6f6f6;
+      margin-bottom: 25px;
+      @include shadowed;
+      transition: 0.3s;
+      @include tablet {
+  
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+      &:hover {
+        background-color: #f5edff;
+        i {
+          color: $color-primary;
+        }
+      }
+      &__number {
+        margin-left: -12px;
+        color: white;
+        background-color: $color-primary;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 26px;
+        margin-right: 22px;
+      }
+      &__icon {
+        font-size: 20px;
+        color: #7e7e7e;
+        margin-right: 27px;
+      }
+    }
+  }

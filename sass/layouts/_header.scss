@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: center;
+    &__logo {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-family: $font-primary;
+      @include desktop {
+        font-size: 45px;
+      }
+      &--menus {
+        margin-left: 32px;
+        margin-right: 106px;
+      }
+    }
+  }
+  .back-link {
+    font-size: 21px;
+    margin: 26px 32px 16px 23px;
+  }

@@ -1,0 +1,14 @@
+@mixin tablet {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+      @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+      @content;
+    }
+  }
+  
+  @mixin shadowed($shadow-color: $shadow-default) {
+    box-shadow: 0px 5px 13px 0px $shadow-color;
+  }
