@@ -50,8 +50,6 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 21px;
-  /*     animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both ;
- */
   h2 {
     margin-left: 5px;
     margin-bottom: 24px;
@@ -84,14 +82,22 @@
   }
   &__item {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background-color: white;
     height: 68px;
     border-radius: 15px;
     margin-bottom: 16px;
-    padding: 15px 22px 12px 10px;
-
+    padding: 0px 0px 0px 10px;
+    overflow: hidden;
+    &:hover {
+      .checkbox {
+        width: 60px;
+      }
+      .fa-check-circle {
+        animation: rotation 500ms ;
+      }
+    }
     @include desktop {
       width: 30%;
     }
@@ -99,20 +105,25 @@
     &__txt {
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    h3 {
-      font-weight: 500;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-    p {
-      font-weight: 300;
-      font-size: 15px;
+      flex-grow: 1;
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 4px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      p {
+        font-weight: 300;
+        font-size: 15px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
     > p {
       font-weight: 500;
       align-self: flex-end;
+      margin: 0 22px 12px 40px;
     }
   }
 }
@@ -120,12 +131,12 @@
   padding-bottom: 7px;
   border-bottom: 3px solid $color-tertiary;
 }
-.checkbox{
-  width: 60px;
+.checkbox {
+  width: 0px;
   height: 100%;
   background-color: #98e2d0;
-  ;
-}
+  transition: width 500ms ;
+  }
 
 @keyframes fade-in {
   0% {
@@ -139,3 +150,21 @@
     transform: translateY(0);
   }
 }
+
+.fa-check-circle {
+  color: white;
+  font-size: 25px;
+  margin-left: 18px;
+  margin-top: 22px;
+
+}
+
+@keyframes rotation{
+  0%{
+    transform: rotate(-270deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
