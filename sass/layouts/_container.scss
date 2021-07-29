@@ -82,14 +82,13 @@
   }
   &__item {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     background-color: white;
     height: 68px;
     border-radius: 15px;
     margin-bottom: 16px;
-    padding: 0px 0px 0px 10px;
     overflow: hidden;
+
     &:hover {
       .checkbox {
         width: 60px;
@@ -99,13 +98,17 @@
       }
     }
     @include desktop {
-      width: 30%;
+      flex-basis: 32%;
+      
     }
     @include shadowed;
+
     &__txt {
       white-space: nowrap;
       overflow: hidden;
       flex-grow: 1;
+      margin-left: 10px;
+
       h3 {
         font-weight: 500;
         font-size: 18px;
@@ -123,7 +126,7 @@
     > p {
       font-weight: 500;
       align-self: flex-end;
-      margin: 0 22px 12px 40px;
+      padding: 0 22px 12px 40px;
     }
   }
 }
@@ -134,8 +137,10 @@
 .checkbox {
   width: 0px;
   height: 100%;
+  flex-shrink: 0;
   background-color: #98e2d0;
   transition: width 500ms;
+
   &:hover {
     cursor: pointer;
   }
@@ -169,9 +174,7 @@
     transform: rotate(0deg);
   }
 }
-.heart {
-  transition: stroke 1s ease-in-out;
-}
+
 .heart:hover {
   cursor: pointer;
   fill: url(#gradient-fill);

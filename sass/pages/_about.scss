@@ -5,6 +5,7 @@
     background-color: #353535;
     color: white;
     padding: 25px 5.33%;
+    
     @include desktop {
       font-size: 1.05em;
       flex-direction: row;
