@@ -79,22 +79,12 @@ main {
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fade-out {
-  0%,
-  90% {
-    opacity: 1;
-  }
-  0%,
-  100% {
-    z-index: 1;
+.format-1920 {
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    max-width: 1715px;
+    align-self: center;
+    width: 100%;
   }
 }

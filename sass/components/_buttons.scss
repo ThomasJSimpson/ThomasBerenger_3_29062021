@@ -19,3 +19,28 @@
       filter: brightness(107%);
     }
   }
+  .checkbox {
+    width: 0px;
+    height: 100%;
+    flex-shrink: 0;
+    background-color: $color-tertiary;
+    transition: width 500ms;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .fa-check-circle {
+    color: white;
+    font-size: 25px;
+    margin-left: 18px;
+    margin-top: 22px;
+  }
+  
+  .heart:hover {
+    cursor: pointer;
+    fill: url(#gradient-fill);
+    stroke: url(#gradient-fill);
+    animation: anim-heart 1000ms;
+  }
