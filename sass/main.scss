@@ -1,14 +1,13 @@
 @import "./utils/variables";
-@import "./utils/functions";
 @import "./utils/mixins";
-@import "./utils/extensions";
+@import "./utils/animations";
 @import "./base/typography";
 @import "./base/base";
 @import "./components/buttons";
 @import "./layouts/header";
-@import "./layouts/nav";
 @import "./layouts/container";
-@import "./layouts/form";
 @import "./pages/work";
-@import "./pages/about";
+@import "./layouts/footer";
 @import "./pages/project";
+@import "./pages/menus";
+

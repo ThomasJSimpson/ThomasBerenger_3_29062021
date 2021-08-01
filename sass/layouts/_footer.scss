@@ -3,15 +3,18 @@
     flex-direction: column;
     height: 197px;
     background-color: #353535;
+    justify-content: center;
     color: white;
     padding: 25px 5.33%;
-    
-    @include desktop {
-      font-size: 1.05em;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-    }
+  
+    & .format-1920 {
+      @include desktop {
+        font-size: 1.05em;
+        flex-direction: row;
+        justify-content: space-around;
+        
+      }
+    } 
     a {
       display: flex;
       color: white;
@@ -44,3 +47,4 @@
     margin-left: -2px;
     margin-right: 6px;
   }
+  
